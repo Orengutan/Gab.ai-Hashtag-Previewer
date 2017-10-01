@@ -8,7 +8,6 @@
 // @grant       none
 // ==/UserScript==
 
-
 function getNthParent(element, n) {
     while(n>0) {
         element = element.parentNode;
