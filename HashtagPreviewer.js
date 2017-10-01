@@ -8,6 +8,15 @@
 // @grant       none
 // ==/UserScript==
 
+
+function getNthParent(element, n) {
+    while(n>0) {
+        element = element.parentNode;
+        n--;
+    }
+    return element;
+}
+
 function start() {
     var hashtags = null;
     var classes = null;
@@ -22,8 +31,7 @@ function start() {
             try {
                 hashtags = document.getElementsByClassName('inner-post-hashtag');
                 for(var i=0; i<hashtags.length; i++) {
-                    if (!hashtags[i].classList.contains("setted") && hashtags[i].parentNode.parentNode.parentNode.parentNode.classList.contains('post--first') &&
-                        !hashtags[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.classList.contains('post-list--alt')) {
+                    if (!hashtags[i].classList.contains("setted") && getNthParent(hashtags[i], 12).classList.contains('post-modal')) {
                         classes = hashtags[i].className.split(' ')[1];
                         target = classes.split("--")[1];
                         $.ajax({
