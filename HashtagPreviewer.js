@@ -48,7 +48,7 @@ function start() {
                                 html += '<div style="display: flex; margin-top: 20px;">';
                                 html += '<img src='+result.data[i].actuser.picture_url+' style="border-radius: 50%; margin-right: 10px; margin-top: 3px; width:35px; height:35px;">';
                                 html += '<span style="flex: 1;">';
-                                html += '<a href="https://gab.ai/'+result.data[i].actuser.username+'"><strong>'+result.data[i].actuser.name+'</strong></a> (@'+result.data[i].actuser.username+') <strong>- Post (<a href="https://gab.ai/'+result.data[i].actuser.username+'/posts/'+result.data[i].id+'">Link</a>):</strong> '+result.data[i].post.body;
+                                html += '<a style="color:#2dd"; href="https://gab.ai/'+result.data[i].actuser.username+'"><strong>'+result.data[i].actuser.name+'</strong></a> - @'+result.data[i].actuser.username+' - <strong>Post (<a href="https://gab.ai/'+result.data[i].actuser.username+'/posts/'+result.data[i].id+'">Link</a>):</strong> '+result.data[i].post.body;
                                 html += '</span>';
                                 html += '</div>';
                             });
