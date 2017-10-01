@@ -49,7 +49,7 @@ function start() {
                                     html += '<div style="display: flex;">';
                                     html += '<img src='+result.data[i].actuser.picture_url+' style="border-radius: 5px; margin-right: 10px; margin-top: 10px; width:100px; height:100px;">';
                                     html += '<span style="flex: 1; margin-top: 10px;">';
-                                    html += '<strong>User:</strong> '+result.data[i].actuser.name +' <strong>- Post:</strong> '+result.data[i].post.body;
+                                    html += '<a href="https://gab.ai/'+result.data[i].actuser.username+'"><strong>'+result.data[i].actuser.name+'</strong></a> (@'+result.data[i].actuser.username+') <strong>- Post:</strong> '+result.data[i].post.body;
                                     html += '</span>';
                                     html += '</div>';
                                 });
