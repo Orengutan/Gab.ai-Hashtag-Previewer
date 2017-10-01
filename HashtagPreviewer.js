@@ -4,7 +4,7 @@
 // @description When you select a post from the home page you'll be able to see the most recent threads on the hashtags that it contains
 // @namespace   gabai
 // @include     https://gab.ai/*
-// @version     1
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
@@ -58,8 +58,8 @@ function start() {
                                 varButton.id = "button"+count;
                                 varButton.title ="Click to show/hide content";
                                 varButton.type="button";
-                                varButton.innerHTML="Show/hide";
-                                varButton.setAttribute('style','color: #000;');
+                                varButton.innerHTML="#"+target+" (Show/hide)";
+                                varButton.setAttribute('style','border-radius: 4px; color:#bbb; border: 2px solid #bbb; background-color: transparent;');
                                 varButton.onclick = function() {
                                     if(varSpoiler.style.display=="none") {
                                         varSpoiler.style.display="";
@@ -68,10 +68,15 @@ function start() {
                                     }
                                 };
 
-                                $(hashtags[i]).parent().append(varButton);
+                                var container = document.createElement('div');
+                                container.className = "hashtag-actions";
+                                container.setAttribute('style','margin-top: 10px;');
+                                $(container).append(varButton);
                                 $(varSpoiler).append(html);
-                                $(hashtags[i]).parent().append(varSpoiler);
-                                
+                                $(container).append(varSpoiler);
+
+                                $(hashtags[i]).parents().eq(1).append(container);
+
                                 count++;
                             },
                             async: false
