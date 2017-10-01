@@ -46,9 +46,9 @@ function start() {
                                 html += '<div style="margin: 10px; padding: 10px;  border-radius: 5px; border-color: #fff; background-color: #333; color: #fff;"><strong>Recent posts about '+target+':</strong>';
 
                                 $.each(result.data.slice(0,5), function(i, data) {
-                                    html += '<div style="display: flex;">';
-                                    html += '<img src='+result.data[i].actuser.picture_url+' style="border-radius: 5px; margin-right: 10px; margin-top: 10px; width:100px; height:100px;">';
-                                    html += '<span style="flex: 1; margin-top: 10px;">';
+                                    html += '<div style="display: flex; margin-top: 20px;">';
+                                    html += '<img src='+result.data[i].actuser.picture_url+' style="border-radius: 50%; margin-right: 10px; margin-top: 3px; width:35px; height:35px;">';
+                                    html += '<span style="flex: 1;">';
                                     html += '<a href="https://gab.ai/'+result.data[i].actuser.username+'"><strong>'+result.data[i].actuser.name+'</strong></a> (@'+result.data[i].actuser.username+') <strong>- Post (<a href="https://gab.ai/'+result.data[i].actuser.username+'/posts/'+result.data[i].id+'">Link</a>):</strong> '+result.data[i].post.body;
                                     html += '</span>';
                                     html += '</div>';
