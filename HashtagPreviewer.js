@@ -27,11 +27,11 @@ function start() {
     var interval = 3;
 
     var openerInt = window.setInterval(function(){
-        if (window.location.pathname == "/home") {
+        if (window.location.pathname == "/home" || window.location.pathname.split('/')[2] == "posts") {
             try {
                 hashtags = document.getElementsByClassName('inner-post-hashtag');
                 for(var i=0; i<hashtags.length; i++) {
-                    if (!hashtags[i].classList.contains("setted") && getNthParent(hashtags[i], 12).classList.contains('post-modal')) {
+                    if (!hashtags[i].classList.contains("setted") && (getNthParent(hashtags[i], 12).classList.contains('post-modal') || window.location.pathname.split('/')[2] == "posts")) {
                         classes = hashtags[i].className.split(' ')[1];
                         target = classes.split("--")[1];
                         $.ajax({
